@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class Loading : MonoBehaviour {
 
 	private IEnumerator loadLevel(){
 		yield return new WaitForSeconds (WAIT_TIME);
-		Application.LoadLevel ((Application.loadedLevel+1));
+		SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex+1);
 	}
 
 }

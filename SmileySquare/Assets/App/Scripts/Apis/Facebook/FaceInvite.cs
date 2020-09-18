@@ -17,12 +17,15 @@ public abstract class FaceInvite : FaceBase {
 	}
 
 	protected override void publishAction(){
+		/*
 		FB.AppRequest(
 			inviteMessage, null, null, null, maxFriends, 
 			inviteData, inviteTitle, inviteCallback );
+			*/
 	}
 
 	protected void inviteCallback (){
+/*
 		Debug.Log("FBU: Invite ");
 		postError = null;
 		if (result != null) {
@@ -39,6 +42,7 @@ public abstract class FaceInvite : FaceBase {
 			Debug.Log ("FBU: Invite SUCCESS");
 			this.publishSuccess();
 		}
+		*/
 	}
 
 }

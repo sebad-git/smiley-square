@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AdMobLoader : AdMobBanner {
 
@@ -13,7 +14,7 @@ public class AdMobLoader : AdMobBanner {
 	public IEnumerator load(){
 		this.initialize();
 		yield return new WaitForSeconds (waitTime);
-		Application.LoadLevel(Application.loadedLevel+1);
+		SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex+1);
 	}
 
 }

@@ -2,6 +2,8 @@
 using System.Collections;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
+
 public abstract class FaceBase : MonoBehaviour {
 
 	public int loginTimeout = 300;
@@ -10,25 +12,39 @@ public abstract class FaceBase : MonoBehaviour {
 	protected string postError;
 
 	void Start () {
-		FB.Init(OnInitComplete, OnHideUnity);
+		//FB.Init(OnInitComplete, OnHideUnity);
 		this.initialize();
 	}
 
-	protected void OnInitComplete() { Debug.Log("FB.Init completed: Is user logged in? " + FB.IsLoggedIn); }
-	protected void OnHideUnity(bool isGameShown) { Debug.Log("Is game showing? " + isGameShown); }
+	protected void OnInitComplete() { 
+		/*
+		Debug.Log("FB.Init completed: Is user logged in? " + FB.IsLoggedIn); 
+		*/
+		}
+	protected void OnHideUnity(bool isGameShown) { 
+		/*
+		Debug.Log("Is game showing? " + isGameShown); 
+		*/
+		}
+
 	
 	protected void facebookLogin() {
-		FB.Login("public_profile,email,user_friends", LoginCallback);
+		/*
+		FB.LogInWithReadPermissions("public_profile,email,user_friends", LoginCallback);
+		*/
 	}
 	
+	/*
 	private void LoginCallback(IResult result){
 		if (result.Error != null) { loginMessage = "Error Response:\n" + result.Error; } 
 		else if (!FB.IsLoggedIn) { loginMessage = "Login cancelled by Player"; }
 		else { loginMessage = "Login was successful!"; }
 		Debug.Log("FBU: "+loginMessage);
 	}
+	*/
 
-	protected void baseCallback(IResult result){
+/*
+	protected void baseCallback(ILoginResult result){
 		postError = null;
 		if (!String.IsNullOrEmpty (result.Error)){
 			postError = "Error Response:" + result.Error;
@@ -40,8 +56,9 @@ public abstract class FaceBase : MonoBehaviour {
 			this.publishSuccess();
 		}
 	}
-
+*/
 	protected IEnumerator publishCorutine(){
+		/*
 		if(FB.IsLoggedIn==false){ Debug.Log("FBU: logging in"); this.facebookLogin();  }
 		int counter = 0; 
 		bool loggedIn=false;
@@ -59,6 +76,8 @@ public abstract class FaceBase : MonoBehaviour {
 			Debug.Log("FBU: Login Timeout."); 
 			this.publishError(); 
 		}
+		*/
+		yield return null;
 	}
 	
 	//ABSTRACT

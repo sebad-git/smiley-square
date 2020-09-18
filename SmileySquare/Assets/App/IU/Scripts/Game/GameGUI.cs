@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameGUI : MonoBehaviour {
 	public const string TAG="Hud";
@@ -36,9 +37,9 @@ public class GameGUI : MonoBehaviour {
 		duplicateScore = false;
 	}
 	
-	public void retry(){Time.timeScale=normalSpeed; Application.LoadLevel ( GameScenes.SCENE_LOADING); }
+	public void retry(){Time.timeScale=normalSpeed; SceneManager.LoadScene( GameScenes.SCENE_LOADING); }
 
-	public void exit(){Time.timeScale=normalSpeed; Application.LoadLevel ( GameScenes.SCENE_MENU); }
+	public void exit(){Time.timeScale=normalSpeed; SceneManager.LoadScene( GameScenes.SCENE_MENU); }
 
 	public void addScore(){ 
 		this.gems = gems + (1 * ( (duplicateScore==true) ? 2 : 1) );

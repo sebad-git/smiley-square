@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AdMobLogo : AdMobBanner {
 	public CanvasGroup logo;
@@ -16,6 +17,7 @@ public class AdMobLogo : AdMobBanner {
 			yield return null;
 		}
 		this.initialize();
-		Application.LoadLevel(Application.loadedLevel+1);
+		SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex+1);
+		
 	}
 }

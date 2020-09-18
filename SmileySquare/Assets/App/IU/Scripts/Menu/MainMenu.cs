@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : AdMobBanner {
 	public string unityAdsID;
@@ -19,7 +20,7 @@ public class MainMenu : AdMobBanner {
 	}
 
 	//MAIN MENU
-	public void play(){ Application.LoadLevel ( GameScenes.SCENE_LOADING); }
+	public void play(){ SceneManager.LoadScene( GameScenes.SCENE_LOADING); }
 
 	public void exit(){Application.Quit ();}
 

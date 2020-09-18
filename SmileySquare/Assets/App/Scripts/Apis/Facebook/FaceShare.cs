@@ -18,11 +18,13 @@ public abstract class FaceShare : FaceBase {
 	}
 
 	protected override void publishAction(){
+/*
 		FB.Feed(linkCaption:shareCaption,
 		        picture:shareImageUrl,
 		        linkName:shareMessage,
 		        link:shareLinkUrl,
 		        callback:baseCallback);
+				*/
 	}
 
 }
